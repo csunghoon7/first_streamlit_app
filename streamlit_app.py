@@ -10,4 +10,5 @@ streamlit.text('🥑🍞아보카도 토스트')
 streamlit.header('🍌🥭 나만의 과일 스무디 만들기 🥝🍇')
 
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
+my_fruit_list = my_fruit_list.set_index(‘Fruit’)
 streamlit.dataframe(my_fruit_list)
