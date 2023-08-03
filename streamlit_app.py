@@ -1,4 +1,5 @@
 import streamlit
 import pandas
 
-print("choisunghoon") 
+a = "choisunghoon"
+print(a) 
