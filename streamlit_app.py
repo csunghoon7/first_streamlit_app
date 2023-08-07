@@ -2,7 +2,8 @@ import streamlit
 import pandas
 streamlit.header("Fruityvice Fruit Advice!")
 import requests
-
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+streamlit.dataframe(fruityvice_normalized)
 
 streamlit.title('My parents New healthy Diner')
 streamlit.header('아침식사 메뉴')
