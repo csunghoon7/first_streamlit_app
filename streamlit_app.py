@@ -10,7 +10,7 @@ streamlit.title('My parents New healthy Diner')
 streamlit.header('아침식사 메뉴')
 streamlit.text('🥣오메가 3 & 블루베리 오트밀')
 streamlit.text('🥗케일, 시금치 & 로켓 스무디')
-streamlit.text('🐔완숙 방목 계란')
+streamlit.text('🐔완숙 방목 계란') 
 streamlit.text('🥑🍞아보카도 토스트')
 streamlit.header('🍌🥭 나만의 과일 스무디 만들기 🥝🍇')
 
