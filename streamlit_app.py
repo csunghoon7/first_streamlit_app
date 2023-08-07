@@ -1,7 +1,6 @@
-streamlit.header("Fruityvice Fruit Advice!")
-
 import streamlit
 import pandas
+streamlit.header("Fruityvice Fruit Advice!")
 import requests
 
 
