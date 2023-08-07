@@ -1,3 +1,4 @@
+import snowflake.connector
 import streamlit
 import pandas
 streamlit.header("Fruityvice Fruit Advice!")
