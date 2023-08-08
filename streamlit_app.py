@@ -7,6 +7,8 @@ streamlit.write('The user entered ', fruit_choice)
 add_my_fruit = streamlit.text_input('What fruit would you like information about?','banana')
 streamlit.write('The user entered ', add_my_fruit)
 
+my_cur.execute("insert into fruit_load_list_values('from streamlit')")
+
 import requests
 
 streamlit.title('My parents New healthy Diner')
