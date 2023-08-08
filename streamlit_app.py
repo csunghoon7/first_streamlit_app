@@ -1,14 +1,13 @@
 import streamlit
 import pandas
+from urllib.error import URLError
+
 streamlit.header("Fruityvice Fruit Advice!")
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
 
 add_my_fruit = streamlit.text_input('What fruit would you like information about?','banana')
 streamlit.write('The user entered ', add_my_fruit)
-
-import requests
-
 streamlit.title('My parents New healthy Diner')
 streamlit.header('아침식사 메뉴')
 streamlit.text('🥣오메가 3 & 블루베리 오트밀')
@@ -17,6 +16,7 @@ streamlit.text('🐔완숙 방목 계란')
 streamlit.text('🥑🍞아보카도 토스트')
 streamlit.header('🍌🥭 나만의 과일 스무디 만들기 🥝🍇')
 
+import requests
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 my_fruit_list = my_fruit_list.set_index('Fruit')
 fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado','Strawberries']) 
@@ -32,7 +32,6 @@ streamlit.dataframe(fruityvice_normalized)
 streamlit.stop()
 
 import snowflake.connector 
-
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * from fruit_load_list")
