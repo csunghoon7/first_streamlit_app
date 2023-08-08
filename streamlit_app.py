@@ -1,5 +1,7 @@
 import streamlit
 import pandas
+import requests
+import snowflake.connector 
 from urllib.error import URLError
 
 streamlit.header("Fruityvice Fruit Advice!")
@@ -16,7 +18,6 @@ streamlit.text('🐔완숙 방목 계란')
 streamlit.text('🥑🍞아보카도 토스트')
 streamlit.header('🍌🥭 나만의 과일 스무디 만들기 🥝🍇')
 
-import requests
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 my_fruit_list = my_fruit_list.set_index('Fruit')
 fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado','Strawberries']) 
@@ -31,7 +32,6 @@ streamlit.dataframe(fruityvice_normalized)
 
 streamlit.stop()
 
-import snowflake.connector 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * from fruit_load_list")
