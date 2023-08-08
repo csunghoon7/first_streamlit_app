@@ -7,8 +7,6 @@ streamlit.write('The user entered ', fruit_choice)
 add_my_fruit = streamlit.text_input('What fruit would you like information about?','banana')
 streamlit.write('The user entered ', add_my_fruit)
 
-#my_cur.execute("insert into PC_RIVERY_DB.PUBLIC.fruit_load_list values('from streamlit')")
-
 import requests
 
 streamlit.title('My parents New healthy Diner')
@@ -39,3 +37,7 @@ my_cur.execute("SELECT * from fruit_load_list")
 my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_rows)
+
+my_cur.execute("insert into PC_RIVERY_DB.PUBLIC.fruit_load_list values('from streamlit')")
+
+
